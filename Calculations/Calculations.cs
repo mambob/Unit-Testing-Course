@@ -6,5 +6,11 @@ namespace Calculations
         {
             return a + b;
         }
+
+        public decimal Add(decimal a, decimal b)
+        {
+            var sum = a + b;
+            return Math.Round(sum, 2);
+        }
     }
 }

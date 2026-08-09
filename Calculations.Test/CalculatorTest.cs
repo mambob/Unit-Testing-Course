@@ -5,7 +5,7 @@ using Calculations;
 public class UnitTest1
 {
     [Fact]
-    public void TestAdd()
+    public void Add_GivenTwoInteger_ReturnSum()
     {
         // Arrange phase
         var element = new Calculator();
@@ -15,5 +15,18 @@ public class UnitTest1
 
         // Assert phase
         Assert.Equal(3, result);
+    }
+
+    [Fact]
+    public void Add_GivenTwoDecimal_ReturnRoundedsum()
+    {
+        // Given
+        var calculator = new Calculator();
+    
+        // When
+        var result = calculator.Add(1.5m, 1.2m);
+    
+        // Then
+        Assert.Equal(2.7m, result, precision: 2);
     }
 }
