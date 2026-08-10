@@ -2,7 +2,7 @@ namespace Calculations.Test;
 
 using Calculations;
 
-public class UnitTest1
+public class CalculatorTest
 {
     [Fact]
     public void Add_GivenTwoInteger_ReturnSum()
