@@ -12,5 +12,10 @@ namespace Calculations
             var sum = a + b;
             return Math.Round(sum, 2);
         }
+
+        public int UnTreh()
+        {
+            return 3;
+        }
     }
 }

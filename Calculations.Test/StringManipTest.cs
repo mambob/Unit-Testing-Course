@@ -1,6 +1,7 @@
 namespace Calculations.Test;
 
 using Calculations;
+using FluentAssertions;
 
 public class NamesTest
 {
@@ -33,5 +34,16 @@ public class NamesTest
     
         // Then
         Assert.Matches(@"\d+", fullName);
+        fullName.Should().Be("1234");
+    }
+
+    [Fact]
+    public void TestName()
+    {
+        // Given
+    
+        // When
+    
+        // Then
     }
 }
