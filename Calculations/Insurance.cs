@@ -13,6 +13,8 @@ public class Insurance
             default: throw new InvalidDataException();
         }
     }
+
+    public int InterestRate => 10;
 }
 
 
