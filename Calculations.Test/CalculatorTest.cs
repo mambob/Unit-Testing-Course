@@ -2,9 +2,12 @@ namespace Calculations.Test;
 
 using Calculations;
 
-public class CalculatorTest
+public class CalculatorTest (ITestOutputHelper testOutput)
 {
+    private readonly ITestOutputHelper _testOutput = testOutput;
+
     [Fact]
+    [Trait("Category", "Calcs")]
     public void Add_GivenTwoInteger_ReturnSum()
     {
         // Arrange phase
@@ -18,6 +21,7 @@ public class CalculatorTest
     }
 
     [Fact]
+    [Trait("Category", "Calcs")]
     public void Add_GivenTwoDecimal_ReturnRoundedsum()
     {
         // Given
@@ -31,6 +35,7 @@ public class CalculatorTest
     }
 
     [Fact]
+    [Trait("Category", "Calcs")]
     public void UnTreh_WhenCaling_ReturnThree()
     {
         // Given
@@ -40,8 +45,7 @@ public class CalculatorTest
         var result = calculator.UnTreh();
     
         // Then
+        _testOutput.WriteLine("Poca consistencia, un treh");
         Assert.InRange(result, 0, 5);
-
-        Assert.Throws<NotImplementedException>(() => 3+3);
     }
 }

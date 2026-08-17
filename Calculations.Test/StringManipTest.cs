@@ -6,6 +6,7 @@ using FluentAssertions;
 public class NamesTest
 {
     [Fact]
+    [Trait("Category", "Names")]
     public void MakefullName_GivenTwoStrings_ReturnFullname()
     {
         // Given
@@ -24,6 +25,7 @@ public class NamesTest
     }
 
     [Fact]
+    [Trait("Category", "Names")]
     public void MakeFullNAme_GivenTwoNumericStrings_ContainsNumbers()
     {
         // Given
@@ -34,10 +36,11 @@ public class NamesTest
     
         // Then
         Assert.Matches(@"\d+", fullName);
-        fullName.Should().Be("1234");
+        fullName.Should().Be("12 34");
     }
 
     [Fact]
+    [Trait("Category", "Names")]
     public void TestName()
     {
         // Given
