@@ -2,16 +2,29 @@ namespace Calculations.Test;
 
 using Calculations;
 
-public class CalculatorTest (ITestOutputHelper testOutput)
+public class CalculatorFixture
 {
-    private readonly ITestOutputHelper _testOutput = testOutput;
+    public Calculator calc = new();
+}
+
+public class CalculatorTest : IClassFixture<CalculatorFixture>
+{
+    private readonly CalculatorFixture _calculatorFixture;
+
+    public CalculatorTest(ITestOutputHelper testOutput, CalculatorFixture calculatorFixture)
+    {
+        _calculatorFixture = calculatorFixture;
+        _testOutput = testOutput;
+    }
+
+    private readonly ITestOutputHelper _testOutput;
 
     [Fact]
     [Trait("Category", "Calcs")]
     public void Add_GivenTwoInteger_ReturnSum()
     {
         // Arrange phase
-        var element = new Calculator();
+        var element = _calculatorFixture.calc;
 
         // Act phase
         var result = element.Add(1, 2);
@@ -25,7 +38,7 @@ public class CalculatorTest (ITestOutputHelper testOutput)
     public void Add_GivenTwoDecimal_ReturnRoundedsum()
     {
         // Given
-        var calculator = new Calculator();
+        var calculator = _calculatorFixture.calc;
     
         // When
         var result = calculator.Add(1.5m, 1.2m);
@@ -39,7 +52,7 @@ public class CalculatorTest (ITestOutputHelper testOutput)
     public void UnTreh_WhenCaling_ReturnThree()
     {
         // Given
-        var calculator = new Calculator();
+        var calculator = _calculatorFixture.calc;
     
         // When
         var result = calculator.UnTreh();
