@@ -2,7 +2,7 @@ using Calculations;
 
 namespace Calculations.Test;
 
-public class InsuranceCollectorFixture
+public class InsuranceCollectionFixture
 {
     public Insurance Insurance => new();
 }

@@ -1,11 +1,11 @@
 namespace Calculations.Test;
 
 [Collection("Seguros")]
-public class InsuranceDetailsTest : IClassFixture<InsuranceCollectorFixture>
+public class InsuranceDetailsTest
 {
-    private readonly InsuranceCollectorFixture _collectorFixture;
+    private readonly InsuranceCollectionFixture _collectorFixture;
 
-    public InsuranceDetailsTest(InsuranceCollectorFixture collectorFixture)
+    public InsuranceDetailsTest(InsuranceCollectionFixture collectorFixture)
     {
         _collectorFixture = collectorFixture;
     }
